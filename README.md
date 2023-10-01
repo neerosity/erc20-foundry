@@ -1,66 +1,23 @@
-## Foundry
+# Proveably MyToken Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## About
 
-Foundry consists of:
+ERC 20 token
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Explorer
 
-## Documentation
+Sepolia: https://sepolia.etherscan.io/address/0x143601a3021549E7C6D08701Da2b35aAf12a0829
 
-https://book.getfoundry.sh/
+<!-- EIP - Ethereum Improvement Proposal -->
+<!-- ERC - Ethereum Request for Comments (BEP, PEP) -->
 
-## Usage
+<!-- What are ERC20 ?
+Its a smart contract that represents a token.
+Example: Tether, Link(ERC777), Dai, Uni Token. -->
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+<!-- Why make an ERC20?
+1. Governance Tokens
+2. Secure an underlying network
+3. Create a synthetic asset
+4. or anything else
+ -->

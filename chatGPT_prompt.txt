@@ -1,0 +1,57 @@
+Here is my solidity ERC20 token.
+
+```
+// contracts/MyToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.19;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    constructor(uint256 initialSupply) ERC20("MyToken", "MT") {
+        _mint(msg.sender, initialSupply);
+    }
+}
+```
+
+And here our my first couple of tests written in solidity.
+
+```
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.19;
+
+import {DeployMyToken} from "../script/DeployMyToken.s.sol";
+import {MyToken} from "../src/MyToken.sol";
+import {Test, console} from "forge-std/Test.sol";
+import {StdCheats} from "forge-std/StdCheats.sol";
+
+interface MintableToken {
+    function mint(address, uint256) external;
+}
+
+contract MyTokenTest is StdCheats, Test {
+    MyToken public MyToken;
+    DeployMyToken public deployer;
+
+    function setUp() public {
+        deployer = new DeployMyToken();
+        MyToken = deployer.run();
+    }
+
+    function testInitialSupply() public {
+        assertEq(MyToken.tMTalSupply(), deployer.INITIAL_SUPPLY());
+    }
+
+    function testUsersCantMint() public {
+        vm.expectRevert();
+        MintableToken(address(MyToken)).mint(address(this), 1);
+    }
+}
+```
+
+Can you write the rest of the tests? Please include tests for:
+
+- Allowances
+- transfers
+- anything else that might be important
